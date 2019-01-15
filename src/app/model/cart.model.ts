@@ -3,6 +3,7 @@ import { Product } from "./product.model";
 
 @Injectable()
 export class Cart {
+  // will register Cart object as a service so that only one Cart object is shared throughout the application
   public lines: CartLine[] = [];
   public itemCount: number = 0;
   public cartPrice: number = 0;
