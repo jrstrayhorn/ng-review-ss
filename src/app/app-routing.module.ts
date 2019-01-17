@@ -17,6 +17,11 @@ const routes: Routes = [
     component: CheckoutComponent,
     canActivate: [StoreFirstGuard]
   },
+  {
+    path: "admin",
+    loadChildren: "./admin/admin.module#AdminModule",
+    canActivate: [StoreFirstGuard]
+  },
   { path: "**", redirectTo: "/store" }
 ];
 
