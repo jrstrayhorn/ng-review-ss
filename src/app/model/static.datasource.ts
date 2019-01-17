@@ -2,9 +2,10 @@ import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 import { Observable, from } from "rxjs";
 import { Order } from "./order.model";
+import { DataSource } from "./datasource";
 
 @Injectable()
-export class StaticDataSource {
+export class StaticDataSource implements DataSource {
   private products: Product[] = [
     new Product(1, "Product 1", "Category 1", "Product 1 (Category 1)", 100),
     new Product(2, "Product 2", "Category 1", "Product 2 (Category 1)", 100),

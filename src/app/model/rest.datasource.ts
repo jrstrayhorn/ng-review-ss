@@ -3,12 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Product } from "./product.model";
 import { Order } from "./order.model";
+import { DataSource } from "./datasource";
 
 const PROTOCOL = "http";
 const PORT = 3500;
 
 @Injectable()
-export class RestDataSource {
+export class RestDataSource implements DataSource {
   baseUrl: string;
 
   constructor(private http: HttpClient) {

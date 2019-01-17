@@ -1,13 +1,13 @@
 import { Injectable, Inject } from "@angular/core";
 import { Product } from "./product.model";
-import { StaticDataSource } from "./static.datasource";
+import { DataSource } from "./datasource";
 
 @Injectable()
 export class ProductRepository {
   private products: Product[] = [];
   private categories: string[] = [];
 
-  constructor(private dataSource: StaticDataSource) {
+  constructor(private dataSource: DataSource) {
     this.dataSource.getProducts().subscribe(data => {
       this.products = data;
       this.categories = data
