@@ -20,5 +20,86 @@
   (ngSubmit)="submitOrder(form)"
   class="m-2"
 >
-  <div class="form-group"><label>Name</label></div>
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      #name="ngModel"
+      name="name"
+      [(ngModel)]="order.name"
+      class="form-control"
+      required
+    />
+    <span *ngIf="submitted && name.invalid" class="text-danger"
+      >Please enter your name</span
+    >
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <input
+      #address="ngModel"
+      name="address"
+      [(ngModel)]="order.address"
+      class="form-control"
+      required
+    />
+    <span *ngIf="submitted && address.invalid" class="text-danger"
+      >Please enter your address</span
+    >
+  </div>
+  <div class="form-group">
+    <label>City</label>
+    <input
+      #city="ngModel"
+      name="city"
+      [(ngModel)]="order.city"
+      class="form-control"
+      required
+    />
+    <span *ngIf="submitted && city.invalid" class="text-danger"
+      >Please enter your city</span
+    >
+  </div>
+  <div class="form-group">
+    <label>State</label>
+    <input
+      #state="ngModel"
+      name="state"
+      [(ngModel)]="order.state"
+      class="form-control"
+      required
+    />
+    <span *ngIf="submitted && state.invalid" class="text-danger"
+      >Please enter your state</span
+    >
+  </div>
+  <div class="form-group">
+    <label>Zip</label>
+    <input
+      #zip="ngModel"
+      name="zip"
+      [(ngModel)]="order.zip"
+      class="form-control"
+      required
+    />
+    <span *ngIf="submitted && zip.invalid" class="text-danger"
+      >Please enter your zip</span
+    >
+  </div>
+  <div class="form-group">
+    <label>Country</label>
+    <input
+      #country="ngModel"
+      name="country"
+      [(ngModel)]="order.country"
+      class="form-control"
+      required
+    />
+    <span *ngIf="submitted && country.invalid" class="text-danger"
+      >Please enter your country</span
+    >
+  </div>
+  <div class="text-center">
+    <button class="btn btn-secondary m-1" routerLink="/cart">Back</button>
+    <button class="btn btn-primary m-1" type="submit">Complete Order</button>
+  </div>
 </form>
